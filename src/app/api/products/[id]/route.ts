@@ -32,7 +32,8 @@ export async function GET(req: NextRequest, { params }: { params: { id: string }
     } catch (error) {
         return NextResponse.json({
             status: 500,
-            message: 'Error fetching data'
+            message: 'Error fetching data',
+            detail: error
         })
     }
 }
@@ -62,7 +63,8 @@ export async function PUT(req: Request, { params }: { params: { id: string } }) 
     } catch (error) {
         return NextResponse.json({
             status: 500,
-            message: 'Error updated data'
+            message: 'Error updated data',
+            detail: error
         })
     }
 }
@@ -92,7 +94,8 @@ export async function DELETE(req: Request, { params }: { params: { id: string } 
     } catch (error) {
         return NextResponse.json({
             status: 500,
-            message: 'Error delete data'
+            message: 'Error delete data',
+            detail: error
         })
     }
 }

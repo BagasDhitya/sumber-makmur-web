@@ -1,9 +1,7 @@
 "use client"
-import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import Cookies from 'js-cookie'
 
 import { RegisterFormData, registerSchema } from "@/utils/validator/register.schema";
 import { axiosInstance } from "@/utils/api/products.api";
@@ -35,6 +33,7 @@ export default function RegisterForm() {
                 })
             }
         } catch (error) {
+            console.log(error)
             Swal.fire({
                 title: 'Failed',
                 text: 'Failed register, please try again later',

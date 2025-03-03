@@ -7,7 +7,6 @@ import { addToCart } from '@/utils/redux/cartSlice'
 import { useDispatch } from 'react-redux'
 
 export default function ListProduct() {
-    const [product, setProduct] = useState<ICard[]>([])
     const [searchTerm, setSearchTerm] = useState('');
     const [selectedCategory, setSelectedCategory] = useState('All Categories');
     const [isLoading, setIsLoading] = useState<boolean>(false)
@@ -21,7 +20,6 @@ export default function ListProduct() {
         setIsLoading(true)
         try {
             const response = await axiosInstance.get('/products')
-            setProduct(response.data)
 
             // -- kumpulkan kategorinya
             const uniqueCategories: string[] = []
@@ -94,7 +92,7 @@ export default function ListProduct() {
                     <div className='grid grid-cols-3 justify-center items-center w-full h-full gap-4'>
                         {
                             filteredProducts.length > 0 ? (
-                                filteredProducts.map((item: any, key: number) => (
+                                filteredProducts.map((item: ICard | any, key: number) => (
                                     <Card
                                         key={key}
                                         name={item?.name}

@@ -31,6 +31,7 @@ export default function LoginForm() {
                 })
             }
         } catch (error) {
+            console.log(error)
             Swal.fire({
                 title: 'Failed',
                 text: 'Failed register, please try again later',
