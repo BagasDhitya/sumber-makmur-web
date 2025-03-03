@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: http://172.16.3.120:3000
+
+# Sitemaps
+Sitemap: http://172.16.3.120:3000/sitemap.xml
